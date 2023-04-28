@@ -10,6 +10,6 @@ import {} from 'vue'
 .appmian {
   height: 80%;
   width: 100%;
-  background-color: red;
+  border: 1px solid red;
 }
 </style>

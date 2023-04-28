@@ -14,9 +14,8 @@ router.beforeEach(async (to, from, next) => {
       // 如果去其他页面，就需要携带token发其请求，所以我们在请求拦截器做了统一处理携带token,携带token发起请求就会获取用户信息，所以此时我们需要判断用户信息是否存在，如果不存在 就需要获取用户信息
       if (!store.getters.userInfo) {
         await store.dispatch('user/getUserInfo') //store.dispatch是一个异步函数async await 
-      } else {
-        next()
       }
+      next()
     }
   } else {
     // 没有登录 看去的路径是不是白名单里面的路径 是就放行 不是就退回到登录页面

@@ -1,7 +1,8 @@
 import { login, getUserInfo } from "@/api/sys"
 import md5 from 'md5'
-import { setItem, getItem } from "@/utils/storage"
+import { setItem, getItem, removeAllItem } from "@/utils/storage"
 import { TOKEN } from '@/constant'
+import router from '@/router'
 export default {
   namespaced: true,
   state: () => {
@@ -16,7 +17,6 @@ export default {
       state.token = token
       // 本地存储是为了实现token不过期 项目自动登录
       setItem(TOKEN, token)
-      console.log(getItem(TOKEN));
     },
     saveUserInfo(state, userInfo) {
       state.userInfo = userInfo;
@@ -42,6 +42,13 @@ export default {
     async getUserInfo({ commit }) {
       const res = await getUserInfo()
       commit('saveUserInfo', res)
+    },
+    // 退出登录 需要清空所有本地缓存数据 和 vuex数据(token 和 用户信息) 跳转回登录页
+    logout({ commit }) {
+      commit('setToken', '')
+      commit('saveUserInfo', {})
+      removeAllItem()
+      router.push('/login')
     }
   },
   getters: {}

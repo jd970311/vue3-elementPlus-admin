@@ -17,14 +17,13 @@ import sidebar from './components/sidebar'
 import navbar from './components/NavBar.vue'
 import appmain from './components/AppMain.vue'
 
-const allColor = ref('pink')
+const allColor = ref('')
 </script>
 
 <style lang="scss" scoped>
 .layoutContainer {
   width: 100%;
   height: 100%;
-  background-color: black;
   display: flex;
   .container {
     width: calc(100% - 210px);

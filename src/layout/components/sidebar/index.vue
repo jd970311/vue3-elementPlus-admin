@@ -9,6 +9,6 @@ import {} from 'vue'
 <style lang="scss" scoped>
 .sidebar {
   width: 210px;
-  // background-color: pink;
+  border: 1px solid pink;
 }
 </style>
