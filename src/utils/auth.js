@@ -1,24 +1,19 @@
-import { TIME_STAMP, TOKEN_TIMEOUT_VALUE } from '@/constant'
 import { setItem, getItem } from '@/utils/storage'
-/**
- * 获取时间戳
- */
-export function getTimeStamp() {
-  return getItem(TIME_STAMP)
+// 被动退出的主动处理
+// 1. 获取登录时间戳
+export const getTimeStamp = () => {
+  return getItem('loginTime')
 }
-/**
- * 设置时间戳
- */
-export function setTimeStamp() {
-  setItem(TIME_STAMP, Date.now())
+
+// 设置登录时间
+export const setTimeStamp = () => {
+  return setItem('loginTime', Date.now())
 }
-/**
- * 是否超时
- */
-export function isCheckTimeout() {
-  // 当前时间戳
-  var currentTime = Date.now()
-  // 缓存时间戳
-  var timeStamp = getTimeStamp()
-  return currentTime - timeStamp > TOKEN_TIMEOUT_VALUE
-}
+
+// 定义 token 失效时间 为 2 天
+const timeOut = 2 * 3600 * 1000
+
+// 判断token是否超时 失效，用当前请求时间 - 登录时间 看是否大于设置的过效时间
+export const isCheckTimeout = () => {
+  return Date.now() - getTimeStamp() > timeOut
+} 

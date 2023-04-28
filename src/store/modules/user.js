@@ -3,6 +3,7 @@ import md5 from 'md5'
 import { setItem, getItem, removeAllItem } from "@/utils/storage"
 import { TOKEN } from '@/constant'
 import router from '@/router'
+import { setTimeStamp } from '@/utils/auth'
 export default {
   namespaced: true,
   state: () => {
@@ -32,6 +33,8 @@ export default {
           password: md5(password)
         }).then(res => {
           commit('setToken', res.token)
+          // 登录保存当前登录时间
+          setTimeStamp()
           resolve(res)
         }).catch(err => {
           reject(err)
