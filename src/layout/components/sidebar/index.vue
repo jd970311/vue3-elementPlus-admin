@@ -1,6 +1,13 @@
 <template>
-  <div class="sidebar">
-    <h1>占位</h1>
+  <div :class="[store.getters.sidebarOpened ? 'sidebar' : 'sidebarClose']">
+    <div class="container">
+      <el-avatar
+        shape="square"
+        size="44"
+        src="https://m.imooc.com/static/wap/static/common/img/logo-small@2x.png"
+      />
+      <div class="title" v-if="store.getters.sidebarOpened">imooc-admin</div>
+    </div>
     <el-scrollbar>
       <sidebarMenu></sidebarMenu>
     </el-scrollbar>
@@ -15,7 +22,26 @@ import store from '@/store'
 
 <style lang="scss" scoped>
 .sidebar {
-  width: 210px;
+  transition: width 0.2s;
   height: 100%;
+  width: 210px;
+}
+.sidebarClose {
+  transition: width 0.2s;
+  height: 100%;
+  width: 54px;
+}
+.container {
+  height: 44px;
+  padding: 10px 0 16px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .title {
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+  }
 }
 </style>

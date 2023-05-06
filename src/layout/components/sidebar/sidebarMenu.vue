@@ -2,6 +2,7 @@
   <div class="sidebarMenu">
     <el-menu
       class="elMenu"
+      :collapse-transition="false"
       :collapse="!store.getters.sidebarOpened"
       :background-color="store.getters.cssVar.menuBg"
       :active-text-color="store.getters.cssVar.menuText"
@@ -47,5 +48,8 @@ const activeMenu = computed(() => {
   .elMenu {
     height: 100vh;
   }
+}
+::v-deep .el-menu {
+  border-right: none;
 }
 </style>

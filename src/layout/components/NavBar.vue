@@ -53,8 +53,5 @@ const logout = () => {
     position: absolute;
     right: 40px;
   }
-  ::v-deep .el-avatar {
-    --el-avatar-background-color: none;
-  }
 }
 </style>
