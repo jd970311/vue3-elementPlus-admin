@@ -1,5 +1,7 @@
 <template>
-  <div class="appmian">appmian</div>
+  <div class="appmian">
+    <router-view></router-view>
+  </div>
 </template>
 
 <script setup>
@@ -10,6 +12,6 @@ import {} from 'vue'
 .appmian {
   height: 80%;
   width: 100%;
-  border: 1px solid red;
+  overflow: auto;
 }
 </style>

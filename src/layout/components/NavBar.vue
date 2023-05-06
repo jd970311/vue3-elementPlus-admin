@@ -1,7 +1,8 @@
 <template>
   <div class="navbar">
+    <hamburger class="hamburger-container"></hamburger>
     <div class="rightMenu">
-      <el-dropdown>
+      <el-dropdown trigger="click">
         <span class="el-dropdown-link">
           <el-avatar
             shape="square"
@@ -28,6 +29,7 @@
 <script setup>
 import {} from 'vue'
 import store from '@/store'
+import hamburger from '@/components/hamburger'
 // import router from '@/router'
 // import { useStore } from 'vuex'
 // const store = useStore()
@@ -38,19 +40,21 @@ const logout = () => {
 
 <style lang="scss" scoped>
 .navbar {
+  display: flex;
   height: 20%;
   width: 100%;
   border: 1px solid orange;
 }
 .rightMenu {
-  margin-right: 100px;
-  border: 1px solid red;
   height: 40px;
   width: 100%;
   position: relative;
   ::v-deep .el-dropdown {
     position: absolute;
     right: 40px;
+  }
+  ::v-deep .el-avatar {
+    --el-avatar-background-color: none;
   }
 }
 </style>

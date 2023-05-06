@@ -1,7 +1,10 @@
 const path = require('path')
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin')
+
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
+
 // https://cli.vuejs.org/zh/guide/webpack.html#%E7%AE%80%E5%8D%95%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F
 module.exports = {
   // webpack devserver 提供代理的功能，该代理可以把所有请求到当前的服务器的请求转发(代理)到另外的服务器上
@@ -32,5 +35,8 @@ module.exports = {
         symbolId: 'icon-[name]'
       })
       .end()
+  },
+  configureWebpack: {
+    plugins: [new NodePolyfillPlugin()]
   }
 }

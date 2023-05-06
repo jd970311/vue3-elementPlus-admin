@@ -8,7 +8,9 @@ import '@/styles/index.scss'
 import installApp from '@/icons/index.js'
 // 导入 路由权限
 import '@/permission.js'
+// 
+import i18n from '@/i18n'
 const app = createApp(App)
 installElementPlus(app)
 installApp(app) // 调用函数
-app.use(store).use(router).mount('#app')
+app.use(store).use(router).use(i18n).mount('#app')

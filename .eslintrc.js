@@ -11,12 +11,6 @@ module.exports = {
     parser: '@babel/eslint-parser'
   },
   rules: {
-    "vue/multi-word-component-names": [
-      "error",
-      {
-        ignores: ["index"], // 需要忽略的组件名
-      },
-    ],
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     quotes: 'off',
@@ -26,6 +20,9 @@ module.exports = {
     'eol-last': 'off',
     "spaced-comment": 'off',
     "no-var": 'off',
-    "no-trailing-spaces": 'off'
+    "no-trailing-spaces": 'off',
+    "vue/multi-word-component-names": 'off',
+    "no-undef": 'off',
+    "no-unused-vars": 'off'
   }
 }
