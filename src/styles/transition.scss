@@ -1,29 +1,44 @@
-.breadcrumb-enter-active,
-.breadcrumb-leave-active {
-  transition: all 0.25s;
-}
+// .breadcrumb-enter-active,
+// .breadcrumb-leave-active {
+//   transition: all 0.25s;
+// }
 
-.breadcrumb-enter-from,
-.breadcrumb-leave-active {
-  opacity: 0;
-  transform: translateX(20px);
-}
+// .breadcrumb-enter-from,
+// .breadcrumb-leave-active {
+//   opacity: 0;
+//   transform: translateX(20px);
+// }
 
-.breadcrumb-leave-active {
-  position: absolute;
-}
-/* fade-transform */
-.fade-transform-leave-active,
-.fade-transform-enter-active {
+// .breadcrumb-leave-active {
+//   position: absolute;
+// }
+// /* fade-transform */
+// .fade-transform-leave-active,
+// .fade-transform-enter-active {
+//   transition: all 0.5s;
+// }
+
+// .fade-transform-enter-from {
+//   opacity: 0;
+//   transform: translateX(-30px);
+// }
+
+// .fade-transform-leave-to {
+//   opacity: 0;
+//   transform: translateX(30px);
+// }
+// 进入和离开的过程
+.list-enter-active,
+.list-leave-active{
   transition: all 0.5s;
 }
-
-.fade-transform-enter-from {
+// 进入的起点和离开的终点
+.list-enter-from,
+.list-leave-active {
   opacity: 0;
-  transform: translateX(-30px);
+  transform: translateX(20px);
+  font-weight: bolder;
 }
-
-.fade-transform-leave-to {
-  opacity: 0;
-  transform: translateX(30px);
+.list-leave-active {
+  position: absolute;
 }

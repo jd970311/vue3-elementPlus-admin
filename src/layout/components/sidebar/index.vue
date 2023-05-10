@@ -3,7 +3,7 @@
     <div class="container">
       <el-avatar
         shape="square"
-        size="44"
+        :size="height"
         src="https://m.imooc.com/static/wap/static/common/img/logo-small@2x.png"
       />
       <div class="title" v-if="store.getters.sidebarOpened">imooc-admin</div>
@@ -18,6 +18,7 @@
 import {} from 'vue'
 import sidebarMenu from './sidebarMenu.vue'
 import store from '@/store'
+const height = 44
 </script>
 
 <style lang="scss" scoped>
@@ -32,7 +33,7 @@ import store from '@/store'
   width: 54px;
 }
 .container {
-  height: 44px;
+  height: v-bind(height) + 'px';
   padding: 10px 0 16px 0;
   display: flex;
   justify-content: center;

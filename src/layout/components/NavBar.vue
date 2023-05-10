@@ -1,6 +1,10 @@
 <template>
   <div class="navbar">
+    <!-- 图标 -->
     <hamburger class="hamburger-container"></hamburger>
+    <!-- 面包屑 -->
+    <breadcrumb class="breadcrumb"></breadcrumb>
+    <!-- 右侧菜单 -->
     <div class="rightMenu">
       <el-dropdown trigger="click">
         <span class="el-dropdown-link">
@@ -30,6 +34,7 @@
 import {} from 'vue'
 import store from '@/store'
 import hamburger from '@/components/hamburger'
+import breadcrumb from '@/components/breadcrumb'
 // import router from '@/router'
 // import { useStore } from 'vuex'
 // const store = useStore()
@@ -44,6 +49,11 @@ const logout = () => {
   height: 20%;
   width: 100%;
   border: 1px solid orange;
+}
+.breadcrumb {
+  width: 90%;
+  height: 40px;
+  line-height: 40px;
 }
 .rightMenu {
   height: 40px;
