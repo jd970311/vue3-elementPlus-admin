@@ -4,11 +4,11 @@
       <el-breadcrumb-item v-for="(item, index) in filterRoute" :key="item.path">
         <!-- 不可点击项 -->
         <span class="no-direct" v-if="index == filterRoute.length - 1">
-          {{ item.meta.title }}
+          {{ generateTitle(item.meta.title) }}
         </span>
         <!-- 可点击项 -->
         <span class="direct" v-else @click="clickRoute(item)">
-          {{ item.meta.title }}
+          {{ generateTitle(item.meta.title) }}
         </span>
       </el-breadcrumb-item>
     </transition-group>
@@ -16,6 +16,7 @@
 </template>
 
 <script setup>
+import { generateTitle } from '@/utils/i18n'
 import { ref, reactive, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useStore } from 'vuex'
@@ -27,7 +28,6 @@ watch(
     filterRoute.value = route.matched.filter((item) => {
       return item.meta && item.meta.title
     })
-    console.log(filterRoute)
   },
   // 立即执行，且当 `source` 改变时再次执行
   { immediate: true }

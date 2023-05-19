@@ -4,6 +4,10 @@
     <hamburger class="hamburger-container"></hamburger>
     <!-- 面包屑 -->
     <breadcrumb class="breadcrumb"></breadcrumb>
+    <!-- 国际化语言 -->
+    <langSelect></langSelect>
+    <!-- 动态换肤 -->
+    <themeSelect></themeSelect>
     <!-- 右侧菜单 -->
     <div class="rightMenu">
       <el-dropdown trigger="click">
@@ -17,12 +21,14 @@
         <template #dropdown>
           <el-dropdown-menu>
             <el-dropdown-item>
-              <router-link to=""> 主页 </router-link>
+              <router-link to=""> {{ $t('msg.navBar.home') }} </router-link>
             </el-dropdown-item>
             <el-dropdown-item>
-              <router-link to=""> 课程主页 </router-link>
+              <router-link to=""> {{ $t('msg.navBar.course') }} </router-link>
             </el-dropdown-item>
-            <el-dropdown-item @click="logout"> 退出登录 </el-dropdown-item>
+            <el-dropdown-item @click="logout">
+              {{ $t('msg.navBar.logout') }}
+            </el-dropdown-item>
           </el-dropdown-menu>
         </template>
       </el-dropdown>
@@ -35,6 +41,8 @@ import {} from 'vue'
 import store from '@/store'
 import hamburger from '@/components/hamburger'
 import breadcrumb from '@/components/breadcrumb'
+import langSelect from '@/components/langSelect'
+import themeSelect from '@/components/ThemeSelect'
 // import router from '@/router'
 // import { useStore } from 'vuex'
 // const store = useStore()

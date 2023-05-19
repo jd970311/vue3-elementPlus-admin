@@ -7,7 +7,8 @@
       ref="loginFormRef"
     >
       <div class="title-container">
-        <h3 class="title">用户登录</h3>
+        <h3 class="title">{{ $t('msg.login.title') }}</h3>
+        <langSelect effect="light"></langSelect>
       </div>
       <!-- username -->
       <el-form-item prop="username">
@@ -42,8 +43,10 @@
         style="width: 100%; margfin-bottom: 30px"
         :loading="loading"
         @click="handlerlogin"
-        >登录</el-button
       >
+        {{ $t('msg.login.loginBtn') }}
+      </el-button>
+      <div class="tips" v-html="$t('msg.login.desc')"></div>
     </el-form>
   </div>
 </template>
@@ -54,6 +57,8 @@ import { validatePassword } from './rule.js'
 // import store from '@/store'
 import { useStore } from 'vuex'
 import router from '@/router'
+import langSelect from '@/components/langSelect/index.vue'
+import { useI18n } from 'vue-i18n'
 const isPassword = ref('password')
 // 获取dom操作
 const loginFormRef = ref(null)
@@ -63,12 +68,13 @@ const loginForm = reactive({
   password: '123456'
 })
 // 定义规则
+const i18n = useI18n()
 const loginRules = reactive({
   username: [
     {
       required: true,
       trigger: 'blur',
-      message: '用户名为必填项'
+      message: i18n.t('msg.login.usernameRule')
     }
   ],
   password: [
@@ -129,7 +135,7 @@ $cursor: #fff;
     position: relative;
     width: 520px;
     max-width: 100%;
-    padding: 160px 35px 0;
+    padding: 85px 35px 0;
     margin: 0 auto;
     overflow: hidden;
     ::v-deep .el-form-item {
@@ -151,6 +157,11 @@ $cursor: #fff;
         caret-color: $cursor; // caret-color 属性规定 input、textareas 或任何可编辑元素中的光标（插入符号）的颜色。
       }
     }
+    .tips {
+      font-size: 16px;
+      color: #fff;
+      line-height: 24px;
+    }
   }
   .svg-container {
     padding: 6px 5px 6px 15px;
@@ -159,6 +170,7 @@ $cursor: #fff;
     display: inline-block;
   }
   .title-container {
+    display: flex;
     position: relative;
     .title {
       font-size: 26px;
@@ -177,5 +189,8 @@ $cursor: #fff;
     cursor: pointer;
     user-select: none; //user-select 属性规定是否能选取元素的文本。
   }
+}
+::v-deep .el-dropdown {
+  background-color: #fff;
 }
 </style>

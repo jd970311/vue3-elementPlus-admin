@@ -8,7 +8,7 @@ import '@/styles/index.scss'
 import installApp from '@/icons/index.js'
 // 导入 路由权限
 import '@/permission.js'
-// 
+// 国际化语言
 import i18n from '@/i18n'
 const app = createApp(App)
 installElementPlus(app)
