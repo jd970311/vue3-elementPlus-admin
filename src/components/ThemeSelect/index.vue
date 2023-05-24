@@ -21,10 +21,22 @@
     </template>
   </el-dropdown>
   <!-- 弹出层 -->
+  <selectColor v-model="modelValue"></selectColor>
 </template>
-
 <script setup>
-import {} from 'vue'
+import { ref } from 'vue'
+import selectColor from './components/selectColor.vue'
+// 定义数据
+const modelValue = ref(false)
+// 定义方法
+const handleSetTheme = (command) => {
+  modelValue.value = !modelValue.value
+}
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.theme {
+  height: 40px;
+  line-height: 40px;
+}
+</style>

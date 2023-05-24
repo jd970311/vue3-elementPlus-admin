@@ -4,10 +4,14 @@
     <hamburger class="hamburger-container"></hamburger>
     <!-- 面包屑 -->
     <breadcrumb class="breadcrumb"></breadcrumb>
+    <!-- 搜索框 -->
+    <headerSearch></headerSearch>
     <!-- 国际化语言 -->
     <langSelect></langSelect>
     <!-- 动态换肤 -->
-    <themeSelect></themeSelect>
+    <themeSelect class="themeSelect"></themeSelect>
+    <!--全屏 -->
+    <screenfull></screenfull>
     <!-- 右侧菜单 -->
     <div class="rightMenu">
       <el-dropdown trigger="click">
@@ -43,6 +47,8 @@ import hamburger from '@/components/hamburger'
 import breadcrumb from '@/components/breadcrumb'
 import langSelect from '@/components/langSelect'
 import themeSelect from '@/components/ThemeSelect'
+import screenfull from '@/components/ScreenFull'
+import headerSearch from '@/components/headerSearch'
 // import router from '@/router'
 // import { useStore } from 'vuex'
 // const store = useStore()
@@ -71,5 +77,12 @@ const logout = () => {
     position: absolute;
     right: 40px;
   }
+}
+::v-deep .themeSelect {
+  height: 40px;
+  line-height: 40px;
+}
+.el-avatar {
+  --el-avatar-background-color: none;
 }
 </style>

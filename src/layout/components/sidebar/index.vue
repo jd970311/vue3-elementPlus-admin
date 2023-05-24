@@ -45,4 +45,7 @@ const height = 44
     color: #fff;
   }
 }
+.el-avatar {
+  --el-avatar-background-color: none;
+}
 </style>
