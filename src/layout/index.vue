@@ -7,6 +7,8 @@
     <div class="container">
       <!-- 头部菜单 -->
       <navbar></navbar>
+      <!-- 切换 -->
+      <tagsView></tagsView>
       <!-- 主页面 -->
       <appmain></appmain>
     </div>
@@ -18,6 +20,7 @@ import { ref } from 'vue'
 import sidebar from './components/sidebar'
 import navbar from './components/NavBar.vue'
 import appmain from './components/AppMain.vue'
+import tagsView from '@/components/tagsView/index.vue'
 import store from '@/store'
 </script>
 

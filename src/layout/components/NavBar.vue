@@ -55,12 +55,16 @@ import headerSearch from '@/components/headerSearch'
 const logout = () => {
   store.dispatch('user/logout')
 }
+// 定义事件
+const handleClose = (tag) => {
+  console.log(tag)
+}
 </script>
 
 <style lang="scss" scoped>
 .navbar {
   display: flex;
-  height: 20%;
+  height: 10%;
   width: 100%;
   border: 1px solid orange;
 }
