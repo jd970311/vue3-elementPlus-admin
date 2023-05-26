@@ -3,7 +3,7 @@
     <el-dropdown trigger="click" @command="clickLink">
       <div class="language">
         <el-tooltip :effect="effect" content="国际化">
-          <svg-icon icon="language"></svg-icon>
+          <svg-icon id="guide-lang" icon="language"></svg-icon>
         </el-tooltip>
       </div>
       <template #dropdown>

@@ -3,7 +3,9 @@
     <!-- 图标 -->
     <hamburger class="hamburger-container"></hamburger>
     <!-- 面包屑 -->
-    <breadcrumb class="breadcrumb"></breadcrumb>
+    <breadcrumb id="guide-breadcrumb" class="breadcrumb"></breadcrumb>
+    <!-- 功能引导 -->
+    <guide></guide>
     <!-- 搜索框 -->
     <headerSearch></headerSearch>
     <!-- 国际化语言 -->
@@ -49,6 +51,7 @@ import langSelect from '@/components/langSelect'
 import themeSelect from '@/components/ThemeSelect'
 import screenfull from '@/components/ScreenFull'
 import headerSearch from '@/components/headerSearch'
+import guide from '@/components/guide'
 // import router from '@/router'
 // import { useStore } from 'vuex'
 // const store = useStore()

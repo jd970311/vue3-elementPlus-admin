@@ -2,13 +2,14 @@
   <div class="layoutContainer">
     <!-- 侧边栏 -->
     <sidebar
+      id="guide-sidebar"
       :style="{ backgroundColor: store.getters.cssVar.menuBg }"
     ></sidebar>
     <div class="container">
       <!-- 头部菜单 -->
       <navbar></navbar>
       <!-- 切换 -->
-      <tagsView></tagsView>
+      <tagsView id="guide-tags"></tagsView>
       <!-- 主页面 -->
       <appmain></appmain>
     </div>
