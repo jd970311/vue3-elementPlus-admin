@@ -119,7 +119,6 @@ defineProps({
 .pan-item:hover .pan-thumb {
   transform: rotate(-110deg);
 }
-
 .pan-item:hover .pan-info p a {
   opacity: 1;
   transform: translateX(0px) rotate(0deg);

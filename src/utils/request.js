@@ -23,6 +23,8 @@ service.interceptors.request.use(config => {
       return Promise.reject(new Error('token 失效'))
     }
   }
+  // 处理国际化语言请求
+  config.headers['Accept-Language'] = store.getters.language
   return config;
 }, error => {
   // 对请求错误做些什么

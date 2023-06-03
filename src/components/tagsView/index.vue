@@ -77,8 +77,7 @@ watch(visible, (val) => {
 
 <style lang="scss" scoped>
 .tagsView {
-  margin-top: 10px;
-  height: 26px;
+  height: 30px;
   .link {
     margin-left: 5px;
     font-size: 20px;

@@ -76,8 +76,8 @@ watch(
 
 <style lang="scss" scoped>
 .appmian {
-  height: 80%;
-  width: 100%;
+  height: 77%;
   overflow: auto;
+  padding: 20px;
 }
 </style>

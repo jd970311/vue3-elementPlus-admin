@@ -1,6 +1,7 @@
 import request from '@/utils/request'
 
-export const feature = () => {
+// 获取项目功能
+export const features = () => {
   return request({
     url: '/user/feature'
   })
